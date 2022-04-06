@@ -93,7 +93,10 @@ class Encoder:
                     if link_fields[k].link_type == LinkTypes.LIST:
                         obj_dict[k] = [link.to_ref() for link in o]
                     if link_fields[k].link_type == LinkTypes.DIRECT:
-                        obj_dict[k] = o.to_ref()
+                        try:
+                            obj_dict[k] = o.to_ref()
+                        except AttributeError:
+                            obj_dict[k] = o
                     if link_fields[k].link_type == LinkTypes.OPTIONAL_DIRECT:
                         if o is not None:
                             try:
