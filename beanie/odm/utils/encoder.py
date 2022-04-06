@@ -96,7 +96,10 @@ class Encoder:
                         obj_dict[k] = o.to_ref()
                     if link_fields[k].link_type == LinkTypes.OPTIONAL_DIRECT:
                         if o is not None:
-                            obj_dict[k] = o.to_ref()
+                            try:
+                                obj_dict[k] = o.to_ref()
+                            except AttributeError:
+                                obj_dict[k] = o
                         else:
                             obj_dict[k] = o
                 else:
