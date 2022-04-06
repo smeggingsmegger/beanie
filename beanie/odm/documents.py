@@ -1141,6 +1141,7 @@ class Document(BaseModel, UpdateMethods):
         :return: DocumentSettings class
         """
         if cls._document_settings is None:
+            print(cls)
             raise CollectionWasNotInitialized
         return cls._document_settings
 
