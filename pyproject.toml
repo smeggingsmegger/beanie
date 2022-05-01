@@ -16,7 +16,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.7,<4.0"
 pydantic = ">=1.9.0"
-motor = "^2.5"
+motor = "^3.0"
 click = ">=7"
 toml = "*"
 yarl = ">=1.6"
